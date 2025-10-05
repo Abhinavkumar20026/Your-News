@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav's Generative AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #F5F5F5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: #1A237E;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            padding: 15px 0;
+        }
+        
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+        }
+        
+        .ai-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h2 {
+            color: #1A237E;
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: none;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            padding: 12px 25px;
+            background: #1A237E;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        button:hover {
+            background: #FFEB3B;
+            color: #1A237E;
+        }
+        
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #F0F0F0;
+            border-radius: 8px;
+            min-height: 60px;
+            white-space: pre-wrap;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #DDDDDD;
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Abhinav's Generative AI</header>
+
+    <main>
+        <div class="ai-container">
+            <h2>Ask Anything</h2>
+            <textarea id="ai-input" rows="4" placeholder="Type your question or prompt here..."></textarea>
+            <button onclick="generateAI()">Generate</button>
+            <div class="output" id="ai-output">AI output will appear here...</div>
+        </div>
+    </main>
+
+    <footer>&copy; 2025 Abhinav's Generative AI | Powered by Cohere</footer>
+
+    <script>
+        async function generateAI() {
+            const input = document.getElementById('ai-input').value.trim();
+            const outputDiv = document.getElementById('ai-output');
+
+            if (!input) {
+                outputDiv.textContent = "Please type something to generate AI text.";
+                return;
+            }
+
+            outputDiv.textContent = "Generating AI response...";
+
+            try {
+                const response = await fetch("http://localhost:3000/generate", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        prompt: input
+                    })
+                });
+
+                const data = await response.json();
+                if (data.generations && data.generations.length > 0) {
+                    outputDiv.textContent = data.generations[0].text.trim();
+                } else {
+                    outputDiv.textContent = "No output generated. Try again!";
+                }
+            } catch (error) {
+                console.error(error);
+                outputDiv.textContent = "Error generating AI text. Check console for details.";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Abhinav's News Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #F5F5F5;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            background-color: #1A237E;
+            font-size: 25px;
+            font-family: "Poppins", sans-serif;
+            padding: 0 40px;
+        }
+        
+        nav .left {
+            color: white;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+        
+        ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        ul li a:hover {
+            color: #FFEB3B;
+        }
+        
+        .leftSection {
+            background-color: #FFFFFF;
+            color: black;
+            padding: 20px;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 29px;
+        }
+        
+        .rightSection {
+            background-color: #2E3B4E;
+            width: 30%;
+            color: white;
+            padding: 20px;
+        }
+        
+        .rightSection img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .firstSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+        
+        #element {
+            color: blue;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                Abhinav's News Blog
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Current Affairs.html">Current Affairs</a></li>
+                    <!-- ✅ opens main.html -->
+                    <li><a href="Contact Me.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="firstSection">
+        <div class="leftSection">
+            <p>Welcome to my news blog.</p>
+            <span id="element"></span>
+        </div>
+        <div class="rightSection">
+            <img src="https://as1.ftcdn.net/v2/jpg/06/44/10/28/1000_F_644102888_xpJhbJ0c2l533J27jci9ETbiDFXsR1GI.webp" alt="News Image">
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Get latest News'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Abhinav's News Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- Reset --- */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F5F5F5;
+            color: #333333;
+            line-height: 1.6;
+        }
+        /* --- Navigation --- */
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 70px;
+            background-color: #1A237E;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        nav .brand {
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #FFEB3B;
+        }
+        /* --- Main Section --- */
+        
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px;
+        }
+        
+        .leftSection,
+        .rightSection {
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .leftSection {
+            background-color: #FFFFFF;
+            color: #333333;
+            flex: 2;
+            margin-right: 20px;
+        }
+        
+        .leftSection h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1A237E;
+        }
+        
+        .leftSection p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .rightSection {
+            background-color: #2E3B4E;
+            color: #FFFFFF;
+            flex: 1;
+        }
+        
+        .rightSection h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .rightSection p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        /* --- Responsive --- */
+        
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+            .leftSection {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .rightSection {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="brand">Abhinav's News Blog</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Current Affairs.html">Current Affairs</a></li>
+            <li><a href="Contact Me.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="leftSection">
+            <h1>About Me</h1>
+            <p>Hello! I am Abhinav, the creator of this News Blog. I curate the latest news and provide insightful summaries to help you stay updated effortlessly.</p>
+            <p>My goal is to make news accessible, engaging, and easy to understand for everyone. I focus on current affairs, technology, business, and much more.</p>
+            <p><strong>Email:</strong> abhi200326@gmail.com</p>
+        </div>
+
+        <div class="rightSection">
+            <h2>Quick Info</h2>
+            <p><strong>Location:</strong> India</p>
+            <p><strong>Expertise:</strong> News Curation, Technology, Current Affairs</p>
+            <p><strong>Blog Started:</strong> 2025</p>
+        </div>
+    </main>
+</body>
+
+</html>
